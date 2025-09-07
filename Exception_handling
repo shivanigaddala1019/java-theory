@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // ArithmeticException example
+            System.out.print("Enter a number to divide 100: ");
+            int num = sc.nextInt();
+            int result = 100 / num; // may throw ArithmeticException
+            System.out.println("Result of division: " + result);
+
+            // ArrayIndexOutOfBoundsException example
+            int[] arr = {10, 20, 30};
+            System.out.print("Enter an index (0-2): ");
+            int index = sc.nextInt();
+            System.out.println("Value at index " + index + ": " + arr[index]);
+
+            // NumberFormatException example
+            System.out.print("Enter a number in string form: ");
+            sc.nextLine(); // clear buffer
+            String str = sc.nextLine();
+            int val = Integer.parseInt(str); // may throw NumberFormatException
+            System.out.println("Converted integer: " + val);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed!");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Invalid index entered!");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Input is not a valid integer!");
+        } finally {
+            System.out.println("Program finished with exception handling.");
+        }
+
+        sc.close();
+    }
+}
