@@ -1,0 +1,28 @@
+class Details
+{
+    private String name;//Encapsulation
+    private int rollno;
+    Details(String name,int rollno)//Constructor
+    {
+        this.name=name;
+        this.rollno=rollno;
+    }
+    String getName()//Accessing name
+    {
+        return name;
+    }
+    int getRollno()//Accessing Rollno
+    {
+        return rollno;
+    }
+    
+}
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Details d=new Details("Ravalika",4);//Object creation
+		System.out.println("Name:"+d.getName()+"\n"+"Roll No:"+d.getRollno());
+		
+	}
+}
